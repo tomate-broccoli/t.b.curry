@@ -10,3 +10,4 @@ const curry = f=>{
         return g([])(...args)
     }
 }
+module.exports = curry
