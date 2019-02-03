@@ -1,10 +1,9 @@
 // index.js
 const curry = f=>{
     const g = (cache)=>(...args)=>{
-        cache = cache.concat(args)
-        if(f.length > cache.length) return g(cache)
-        return f.apply(null, cache)
-        
+        const a = cache.concat(args)
+        if(f.length > a.length) return g(a)
+        return f.apply(null, a)
     }
     return (...args)=>{
         return g([])(...args)
