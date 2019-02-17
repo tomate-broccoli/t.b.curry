@@ -15,8 +15,9 @@ module.exports = curry
 if(module.parent) return
 
 // sample
+const samp = require('./index.js')
 const f = (a,b,c)=>`a:${a}, b:${b}, c:${c}`
-const g = curry(f)
+const g = samp(f)
 console.log(`** 1: ${g(1, 2, 3)}.`)
 console.log(`** 2: ${g(1)(2)(3)}.`)
 console.log(`** 3: ${g(1, 2)(3)}.`)
