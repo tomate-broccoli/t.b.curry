@@ -9,4 +9,15 @@ const curry = f=>{
         return g([])(...args)
     }
 }
+
 module.exports = curry
+
+if(module.parent) return
+
+// sample
+const f = (a,b,c)=>`a:${a}, b:${b}, c:${c}`
+const g = curry(f)
+console.log(`** 1: ${g(1, 2, 3)}.`)
+console.log(`** 2: ${g(1)(2)(3)}.`)
+console.log(`** 3: ${g(1, 2)(3)}.`)
+console.log(`** 4: ${g(1)(2, 3)}.`)
